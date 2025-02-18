@@ -57,6 +57,15 @@
             gap: 10px;
             margin-top: 5px;
         }
+
+        .home-button {
+            margin-top: 20px;
+            background-color: #28a745;
+        }
+
+        .home-button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -64,63 +73,48 @@
     <form action="#" method="post">
         <h2>HTML Form with Various Input Types</h2>
 
-        <!-- Text Input -->
         <label for="text">Text:</label>
         <input type="text" id="text" name="text" placeholder="Enter text here">
 
-        <!-- Password Input -->
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" placeholder="Enter password">
 
-        <!-- Email Input -->
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="Enter email">
 
-        <!-- Number Input -->
         <label for="number">Number:</label>
         <input type="number" id="number" name="number" placeholder="Enter a number">
 
-        <!-- URL Input -->
         <label for="url">URL:</label>
         <input type="url" id="url" name="url" placeholder="https://example.com">
 
-        <!-- Tel Input -->
         <label for="tel">Telephone:</label>
         <input type="tel" id="tel" name="tel" placeholder="e.g., +1 234 567 8900">
 
-        <!-- Search Input -->
         <label for="search">Search:</label>
         <input type="search" id="search" name="search" placeholder="Search here">
 
-        <!-- Date Input -->
         <label for="date">Date:</label>
         <input type="date" id="date" name="date">
 
-        <!-- Time Input -->
         <label for="time">Time:</label>
         <input type="time" id="time" name="time">
 
-        <!-- DateTime-Local Input -->
         <label for="datetime-local">Date and Time:</label>
         <input type="datetime-local" id="datetime-local" name="datetime-local">
 
-        <!-- Month Input -->
         <label for="month">Month:</label>
         <input type="month" id="month" name="month">
 
-        <!-- Week Input -->
         <label for="week">Week:</label>
         <input type="week" id="week" name="week">
 
-        <!-- Color Input -->
         <label for="color">Color:</label>
         <input type="color" id="color" name="color" value="#3498db">
 
-        <!-- Range Input -->
         <label for="range">Range (0-100):</label>
         <input type="range" id="range" name="range" min="0" max="100" value="50">
 
-        <!-- Checkbox Input -->
         <label>Checkboxes:</label>
         <div class="checkbox-group">
             <input type="checkbox" id="checkbox1" name="checkbox1" value="Option1">
@@ -129,7 +123,6 @@
             <label for="checkbox2">Option 2</label>
         </div>
 
-        <!-- Radio Buttons -->
         <label>Radio Buttons:</label>
         <div class="radio-group">
             <input type="radio" id="radio1" name="radioGroup" value="OptionA">
@@ -138,14 +131,11 @@
             <label for="radio2">Option B</label>
         </div>
 
-        <!-- File Input -->
         <label for="file">File Upload:</label>
         <input type="file" id="file" name="file">
 
-        <!-- Hidden Input -->
         <input type="hidden" name="hiddenField" value="secretValue">
 
-        <!-- Select Dropdown -->
         <label for="select">Select Dropdown:</label>
         <select id="select" name="select">
             <option value="">--Select an option--</option>
@@ -154,15 +144,15 @@
             <option value="3">Option 3</option>
         </select>
 
-        <!-- Textarea -->
         <label for="textarea">Textarea:</label>
         <textarea id="textarea" name="textarea" rows="4" placeholder="Enter multi-line text here"></textarea>
 
-        <!-- Buttons -->
         <button type="submit">Submit</button>
         <button type="reset" style="background-color: #6c757d;">Reset</button>
+
+        <!-- Home Button -->
+        <button type="button" class="home-button" onclick="window.location.href='index.html'">Go to Home</button>
     </form>
-    <br>
-    <button onclick="window.location.href='index.html'">Go to Home</button>
+
 </body>
 </html>
