@@ -7,20 +7,22 @@
 -- USE SchoolDB;
 -- GO
 
--- Create Students table
-CREATE TABLE Students (
-    Id       INT           PRIMARY KEY IDENTITY(1,1),
-    Name     NVARCHAR(100) NOT NULL,
-    Grade    INT           NOT NULL,
-    Email    NVARCHAR(150)
-);
-GO
+-- Create Students table (safe to run multiple times)
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Students')
+BEGIN
+    CREATE TABLE Students (
+        Id       INT           PRIMARY KEY IDENTITY(1,1),
+        Name     NVARCHAR(100) NOT NULL,
+        Grade    INT           NOT NULL,
+        Email    NVARCHAR(150)
+    );
 
--- Insert sample data
-INSERT INTO Students (Name, Grade, Email) VALUES ('Alice Cohen',  90, 'alice@example.com');
-INSERT INTO Students (Name, Grade, Email) VALUES ('Bob Levi',     85, 'bob@example.com');
-INSERT INTO Students (Name, Grade, Email) VALUES ('Carol Mizrahi',78, 'carol@example.com');
-INSERT INTO Students (Name, Grade, Email) VALUES ('Dan Shapiro',  95, 'dan@example.com');
+    -- Insert sample data
+    INSERT INTO Students (Name, Grade, Email) VALUES ('Alice Cohen',   90, 'alice@example.com');
+    INSERT INTO Students (Name, Grade, Email) VALUES ('Bob Levi',      85, 'bob@example.com');
+    INSERT INTO Students (Name, Grade, Email) VALUES ('Carol Mizrahi', 78, 'carol@example.com');
+    INSERT INTO Students (Name, Grade, Email) VALUES ('Dan Shapiro',   95, 'dan@example.com');
+END
 GO
 
 -- Example queries

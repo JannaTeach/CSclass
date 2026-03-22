@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  # Main development container (.NET SDK + VS Code tools)
+  app:
+    image: mcr.microsoft.com/devcontainers/dotnet:8.0
+    volumes:
+      - ..:/workspaces:cached
+    command: sleep infinity
+    depends_on:
+      - db
+    environment:
+      DB_SERVER: db
+      DB_PASSWORD: YourPassword123!
+
+  # SQL Server 2022 (Linux)
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "YourPassword123!"
+    ports:
+      - "1433:1433"
