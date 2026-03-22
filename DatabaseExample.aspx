@@ -24,11 +24,22 @@
 
     <%
         // -------------------------------------------------------
-        // 1. Connection String
-        //    Replace the values below with your actual server/db.
+        // 1. Connection String — choose one option:
+        //
+        // Option A: GitHub Codespaces (devcontainer)
+        //   string connectionString =
+        //       "Server=db;Database=SchoolDB;User Id=sa;Password=YourPassword123!;TrustServerCertificate=True;";
+        //
+        // Option B: Local SQL Server Express / LocalDB
+        //   string connectionString =
+        //       "Server=(localdb)\\MSSQLLocalDB;Database=SchoolDB;Integrated Security=true;";
+        //
+        // Option C: Remote server
+        //   string connectionString =
+        //       "Server=YOUR_SERVER;Database=SchoolDB;User Id=YOUR_USER;Password=YOUR_PASSWORD;";
         // -------------------------------------------------------
         string connectionString =
-            "Server=YOUR_SERVER;Database=SchoolDB;User Id=YOUR_USER;Password=YOUR_PASSWORD;";
+            "Server=db;Database=SchoolDB;User Id=sa;Password=YourPassword123!;TrustServerCertificate=True;";
 
         // -------------------------------------------------------
         // 2. SQL query

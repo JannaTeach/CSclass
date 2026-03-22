@@ -1,0 +1,32 @@
+{
+    "name": "ASP.NET + SQL Server",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-mssql.mssql",
+                "ms-dotnettools.csharp"
+            ],
+            "settings": {
+                "mssql.connections": [
+                    {
+                        "server": "db",
+                        "database": "SchoolDB",
+                        "authenticationType": "SqlLogin",
+                        "user": "sa",
+                        "password": "YourPassword123!",
+                        "savePassword": true,
+                        "profileName": "SQL Server (Codespaces)"
+                    }
+                ]
+            }
+        }
+    },
+
+    // Runs once after the container is created:
+    // installs sqlcmd, waits for SQL Server, and creates the database + tables
+    "postCreateCommand": "bash .devcontainer/init-db.sh"
+}
